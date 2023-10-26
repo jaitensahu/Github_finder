@@ -10,16 +10,21 @@
 body {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
-    background-color: black;
+    background-color:var(--bgcolor);
+}
+:root{
+    --bgcolor:black;
+    --txtclr:white;
 }
 
 .container {
     width: 70%;
 }
 .container h1{
-    color: white;
+    color: var(--txtclr);
 }
 
 form {
@@ -194,7 +199,7 @@ font-size: 12px;
 }
 .header{
     display: flex;
-    color: white;
+    color: var(--txtclr);
     align-items: center;
     margin: 10px 0;
 }
@@ -207,3 +212,18 @@ font-size: 12px;
     font-size: 20px;
     font-weight: bold;
 }
+.mode{
+    width: 70%;
+    color: var(--txtclr);
+    text-align: end;
+    /* height: 10px; */
+}
+.mode i{
+    padding: 20px;
+    font-size: 32px;
+    cursor: pointer;
+}
+.mode i:active{
+    font-size: 30px;
+}
+

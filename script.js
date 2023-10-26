@@ -1,5 +1,8 @@
 let inpt=document.querySelector("input");
 let search=document.querySelector("button");
+let moon=document.querySelector(".fa-moon")
+let sun=document.querySelector(".fa-sun")
+sun.style.display="none"
 search.addEventListener("click",(e)=>{
     e.preventDefault();
     let username=inpt.value;
@@ -8,8 +11,6 @@ search.addEventListener("click",(e)=>{
         getUser(username);
         document.querySelector(".loader").style.display="none";
     },1500)
-   
-    
 })
 
 async function getUser(username){
@@ -57,3 +58,17 @@ async function getUser(username){
     }
    
 }
+let r=document.querySelector(":root")
+moon.addEventListener("click",()=>{
+    moon.style.display="none"
+    sun.style.display="block"
+    r.style.setProperty("--bgcolor", "white");
+    r.style.setProperty("--txtclr", "black");
+})
+
+sun.addEventListener("click",()=>{
+    moon.style.display="block"
+    sun.style.display="none"
+    r.style.setProperty("--bgcolor", "black");
+    r.style.setProperty("--txtclr", "white");
+})
